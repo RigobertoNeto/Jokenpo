@@ -1,0 +1,76 @@
+
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+public static void main(String[] args) {
+
+boolean continua = true;
+Scanner sc = new Scanner(System.in);
+Random random = new Random();
+
+while (continua){
+
+System.out.println("Menu Jokenpo\nQual você deseja escolher ?");
+System.out.println("0-Pedra\n1-Papel\n2-Tesoura");
+int op = sc.nextInt();
+
+switch (op) {
+case 0:
+System.out.println("Você Escolheu: Pedra");
+break;
+case 1:
+System.out.println("Você Escolheu: Papel");
+break;
+case 2:
+System.out.println("Você Escolheu: Tesoura");
+break;
+default:
+System.out.println("Número Inválido");
+}
+
+int nma = random.nextInt(3);
+
+switch (nma) {
+case 0:
+System.out.println("A Máquina Escolheu: Pedra");
+break;
+case 1:
+System.out.println("A Máquina Escolheu: Papel");
+break;
+case 2:
+System.out.println("A Máquina Escolheu: Tesoura");
+break;
+}
+
+if(op==nma) {
+System.out.println("A PARTIDA EMPATOU");
+}
+else if(op==0 && nma==1){
+System.out.println("VOCÊ PERDEU :(");
+}
+else if(op==0 && nma==2) {
+System.out.println("VOCÊ VENCEU :)");
+}
+
+
+if(op==1 && nma==2){
+System.out.println("VOCÊ PERDEU :(");
+}
+else if(op==1 && nma==0) {
+System.out.println("VOCÊ VENCEU :)");
+}
+
+if(op==2 && nma==0){
+System.out.println("VOCÊ PERDEU :(");
+}
+else if(op==2 && nma==1) {
+System.out.println("VOCÊ VENCEU :)");
+}
+
+System.out.println();
+System.out.println("Deseja Continuar Jogando ? \n1-SIM\n2-Não");
+String opcao = sc.next();
+if(opcao.equalsIgnoreCase("2")) continua = false;
+}
+}
+}
